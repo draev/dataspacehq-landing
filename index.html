@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>mDWH — governed data mesh on Snowflake, out of the box</title>
+<title>DataSpace — governed data mesh on Snowflake, out of the box</title>
 <meta name="description" content="Stand up complete, governed data domains on Snowflake — a Native App. No platform, no infra, no DevOps.">
 <style>
   :root {
@@ -134,7 +134,7 @@
 
 <header class="nav">
   <div class="wrap nav-in">
-    <div class="wordmark mono">mDWH<span class="sep">/</span><span class="sf">for Snowflake</span></div>
+    <div class="wordmark mono">DataSpace<span class="sep">/</span><span class="sf">for Snowflake</span></div>
     <a class="btn" href="#demo">Get a demo</a>
   </div>
 </header>
@@ -188,7 +188,7 @@
     <div class="stack">
       <span class="eyebrow mono">Full lifecycle — inside Snowflake</span>
       <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);">Ingest → Transform → Serve</h2>
-      <p>Pick a table, tick “Expose as API”, set a route. mDWH provisions the service, wires RBAC
+      <p>Pick a table, tick “Expose as API”, set a route. DataSpace provisions the service, wires RBAC
       and registers the endpoint. You never touch SPCS, Snowpipe, Tasks or grants.</p>
     </div>
     <div class="cols">
@@ -212,7 +212,7 @@
       without a restart, and out-of-policy requests are rejected.</p>
     </div>
     <div class="terminal">
-      <div class="term-head"><span class="b"></span><span class="b"></span><span class="b"></span><span class="lbl mono">mDWH demo — full cycle</span></div>
+      <div class="term-head"><span class="b"></span><span class="b"></span><span class="b"></span><span class="lbl mono">DataSpace demo — full cycle</span></div>
       <div class="term-body mono">
 <div class="cmd">provision storefront  <span class="cmt"># from a blueprint</span></div>
 <div class="out"><span class="ok">✓</span> governed domain — raw, ingest, ports, transform</div>
@@ -266,7 +266,7 @@
 
 <footer>
   <div class="wrap line">
-    <span><strong>mDWH for Snowflake</strong> — the data-platform team, as a Marketplace app.</span>
+    <span><strong>DataSpace for Snowflake</strong> — the data-platform team, as a Marketplace app.</span>
     <span class="mono" style="color:var(--muted);">DataSpace HQ · <a href="mailto:hello@dataspacehq.com">hello@dataspacehq.com</a></span>
   </div>
 </footer>
@@ -287,7 +287,7 @@
   function show(kind, text) { msg.className = 'form-msg ' + kind; msg.textContent = text; }
   function mailtoFallback(data) {
     const body = `Email: ${data.email}\nCompany: ${data.company || '-'}\nUse case: ${data.use_case || '-'}\nMessage: ${data.message || '-'}`;
-    window.location.href = `mailto:${LEAD_EMAIL}?subject=${encodeURIComponent('mDWH demo request')}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:${LEAD_EMAIL}?subject=${encodeURIComponent('DataSpace demo request')}&body=${encodeURIComponent(body)}`;
   }
 
   form.addEventListener('submit', async (e) => {
