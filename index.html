@@ -212,14 +212,14 @@
       without a restart, and out-of-policy requests are rejected.</p>
     </div>
     <div class="terminal">
-      <div class="term-head"><span class="b"></span><span class="b"></span><span class="b"></span><span class="lbl mono">serve-gateway</span></div>
+      <div class="term-head"><span class="b"></span><span class="b"></span><span class="b"></span><span class="lbl mono">mDWH demo — full cycle</span></div>
       <div class="term-body mono">
+<div class="cmd">provision storefront  <span class="cmt"># from a blueprint</span></div>
+<div class="out"><span class="ok">✓</span> governed domain — raw, ingest, ports, transform</div>
+<div class="cmd">provision marketing_db  <span class="cmt"># breaks the rules</span></div>
+<div class="out">✗ rejected — 5 guardrail violations</div>
 <div class="cmd">curl '.../orders?currency=USD'</div>
-<div class="out">{"route":"/orders","count":2,"rows":[{"order_id":"ord-0002",…}]}</div>
-<div class="cmd">expose /products  <span class="cmt"># tick the box, live</span></div>
-<div class="out"><span class="ok">200 OK</span> — served, no restart</div>
-<div class="cmd">curl '.../orders?secret=1'</div>
-<div class="out">400 — filter not allowed <span class="cmt"># safe by default</span></div>
+<div class="out"><span class="ok">200 OK</span> — governed, no SQL from callers</div>
       </div>
     </div>
   </section>
@@ -227,10 +227,10 @@
   <section id="demo">
     <div class="form-wrap">
       <div class="stack">
-        <span class="eyebrow mono">Get a demo</span>
-        <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);">See it on your data.</h2>
-        <p>15 minutes. Bring one Snowflake table — we’ll expose it as a governed API, live on the call.
-        No install required to watch.</p>
+        <span class="eyebrow mono">Become a design partner</span>
+        <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);">See the full cycle live.</h2>
+        <p>A 20-minute walkthrough of a governed domain — ingest, transform, serve — then we set you
+        up as a design partner to run it on your own Snowflake.</p>
         <div class="trust"><span class="dot"></span> We reply within one business day.</div>
       </div>
       <div class="route-card" style="padding:22px;">
