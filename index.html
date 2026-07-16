@@ -150,58 +150,63 @@
         as you need, under one governance. No platform, no infra, no DevOps. It runs inside
         Snowflake and manages itself.</p>
         <div class="cta-row">
-          <a class="btn" href="#demo">See it on your data →</a>
+          <a class="btn" href="#demo">Become a design partner →</a>
           <a class="btn ghost" href="#how">How it works</a>
         </div>
         <div class="trust"><span class="dot"></span> Runs in your Snowflake account. Your data never leaves.</div>
       </div>
-      <div class="route-card" aria-label="Example generated endpoint">
+      <div class="route-card" aria-label="A governed data domain">
         <div class="route-head mono">
-          <span class="verb">GET</span><span class="path">/orders</span><span class="arrow">→</span>
-          <span class="status"><span class="dot"></span>200 OK</span>
+          <span class="verb">DOMAIN</span><span class="path">storefront</span>
+          <span class="status"><span class="dot"></span>governed</span>
         </div>
         <div class="route-body mono">
-<pre><span class="out">{</span> <span class="k">"route"</span>: "/orders", <span class="k">"count"</span>: 3,
-  <span class="k">"rows"</span>: [ { "order_id": "ord-0002", "amount": 27.0, "currency": "USD" }, … ] <span class="out">}</span></pre>
+<pre><span class="k">owner </span>  sales-eng@company.com
+<span class="k">layers</span>  raw → staging → marts
+<span class="k">ports </span>  /orders · /products · share
+<span class="k">policy</span>  ✓ inherited · PII masked · access: deny
+<span class="k">status</span>  READY</pre>
         </div>
       </div>
     </div>
   </section>
 
-  <section>
-    <div class="stack">
-      <span class="eyebrow mono">Why it matters</span>
-      <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);">One governed way to do data — across every domain.</h2>
-      <p style="max-width:36em;">Each domain is a complete, governed unit with the same shape. Spin up as
-      many as you need; every one inherits your company’s rules. And each domain serves its data through
-      whatever port its consumers need:</p>
-    </div>
-    <div class="outcomes">
-      <div class="oc"><div class="verb-lbl mono">Ship</div><h3>Power your apps</h3><p>Give product teams curated data as REST — orders, customer 360, inventory — not a SQL client.</p></div>
-      <div class="oc"><div class="verb-lbl mono">Share</div><h3>Enable partners</h3><p>Publish governed, per-consumer endpoints so partners pull exactly the data they’re allowed to.</p></div>
-      <div class="oc"><div class="verb-lbl mono">Sell</div><h3>Monetize a domain</h3><p>Offer — or charge — customers and partners for governed access to a domain, via an API or a Snowflake share.</p></div>
-    </div>
-    <p style="margin-top:22px;font-size:.9rem;color:var(--muted);">On the roadmap: open <strong>Iceberg</strong> output ports, and governing data that lives in an external lakehouse — <strong>Databricks, Glue</strong> — through Snowflake, without moving it.</p>
-  </section>
-
+  <!-- COVERAGE — the full lifecycle a domain covers -->
   <section id="how">
     <div class="stack">
-      <span class="eyebrow mono">Full lifecycle — inside Snowflake</span>
-      <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);">Ingest → Transform → Serve</h2>
-      <p>Pick a table, tick “Expose as API”, set a route. DataSpace provisions the service, wires RBAC
-      and registers the endpoint. You never touch SPCS, Snowpipe, Tasks or grants.</p>
+      <span class="eyebrow mono">What it covers — full lifecycle, inside Snowflake</span>
+      <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);">Every domain: Ingest → Transform → Serve</h2>
+      <p style="max-width:36em;">A domain is a complete, governed unit with the same shape — layers,
+      owner, access policy, output ports. Write a short blueprint; DataSpace provisions and runs the
+      whole pipeline. You never touch SPCS, Snowpipe, Tasks, dbt or grants.</p>
     </div>
     <div class="cols">
-      <div class="col"><span class="n mono">01 </span><h3>Ingest</h3><p>Point an HTTP endpoint at a domain; data lands validated.</p><div class="hide mono">hides: Snowpipe, schemas</div></div>
-      <div class="col"><span class="n mono">02 </span><h3>Transform</h3><p>Declarative blueprints &amp; dbt models build curated marts.</p><div class="hide mono">hides: dbt, Tasks</div></div>
-      <div class="col"><span class="n mono">03 </span><h3>Serve</h3><p>Tick a box; a governed HTTP endpoint goes live.</p><div class="hide mono">hides: SPCS, RBAC</div></div>
+      <div class="col"><span class="n mono">01 </span><h3>Ingest</h3><p>Point an HTTP endpoint at a domain; events land validated in raw.</p><div class="hide mono">hides: Snowpipe, schemas</div></div>
+      <div class="col"><span class="n mono">02 </span><h3>Transform</h3><p>dbt models — generated from the blueprint — build curated marts.</p><div class="hide mono">hides: dbt, Tasks</div></div>
+      <div class="col"><span class="n mono">03 </span><h3>Serve</h3><p>Publish curated data as governed output ports.</p><div class="hide mono">hides: SPCS, RBAC</div></div>
+    </div>
+  </section>
+
+  <!-- FEATURES — the cool stuff -->
+  <section>
+    <div class="stack">
+      <span class="eyebrow mono">The good stuff</span>
+      <h2 style="font-size:clamp(1.5rem,3.6vw,2.1rem);">Governed by construction. Open by default.</h2>
+      <p style="max-width:36em;">Company guardrails are enforced on every domain — and a domain serves
+      its data through whatever port its consumers need.</p>
+    </div>
+    <div class="outcomes">
+      <div class="oc"><div class="verb-lbl mono">Ship</div><h3>Power your apps</h3><p>Curated data as a governed REST API — orders, customer 360, inventory — not a SQL client.</p></div>
+      <div class="oc"><div class="verb-lbl mono">Share</div><h3>Enable partners</h3><p>Governed, per-consumer endpoints or a Snowflake share — partners pull exactly what they’re allowed to.</p></div>
+      <div class="oc"><div class="verb-lbl mono">Sell</div><h3>Monetize a domain</h3><p>Offer — or charge — customers for governed access to a domain, via an API or a Snowflake share.</p></div>
     </div>
     <div class="safe">
       <div><span class="ck">✓</span><span><strong>Callers never send SQL.</strong> Routes map to trusted objects.</span></div>
       <div><span class="ck">✓</span><span><strong>Allow-listed filters only.</strong> Everything else is rejected.</span></div>
       <div><span class="ck">✓</span><span><strong>Enforced row limits</strong> on every query.</span></div>
-      <div><span class="ck">✓</span><span><strong>Full audit</strong> of every domain and endpoint.</span></div>
+      <div><span class="ck">✓</span><span><strong>Guardrails enforced</strong> — naming, PII, access, cost — on every domain.</span></div>
     </div>
+    <p style="margin-top:22px;font-size:.9rem;color:var(--muted);">On the roadmap: open <strong>Iceberg</strong> output ports, and governing data in an external lakehouse — <strong>Databricks, Glue</strong> — through Snowflake, without moving it.</p>
   </section>
 
   <section>
